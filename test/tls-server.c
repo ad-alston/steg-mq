@@ -64,6 +64,7 @@ SSL_CTX* getServerContext(char* certFile){
 
 	context = SSL_CTX_new(method);
 	if(context != NULL){
+		SSL_CTX_set_cipher_list(context, "AES256-SHA");
 		
 		// Attempt to load certificate
 		if( SSL_CTX_use_certificate_file(context, certFile, 

@@ -52,9 +52,12 @@ SSL_CTX* getTLSContext(void){
 
 	OpenSSL_add_all_algorithms();
 	SSL_load_error_strings();	
+
 	method = TLSv1_2_client_method();
 
 	context = SSL_CTX_new(method);
+
+	SSL_CTX_set_cipher_list(context, "AES256-SHA");
 
 	return context;
 }
