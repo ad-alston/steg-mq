@@ -49,3 +49,19 @@ int interface_close(int descriptor){
 	close(descriptor);
 }
 
+/**
+ * Reads n bytes from a socket stream into buffer.
+ */
+int readBytes(int socket, int n, void* buffer){
+	int read = 0;
+	int result;
+
+	while(read < n){
+		if( (result = read(socket, buffer + read, n - read) < 1)){
+			return -1;
+		}
+		read += result;
+	}
+	return 0;
+}
+

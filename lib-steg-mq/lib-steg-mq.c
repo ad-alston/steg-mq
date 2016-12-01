@@ -6,6 +6,7 @@
  */
 
 #include "lib-steg-mq.h"
+#include "../mq/commands.h"
 
 /** 
  * Obtains a connection to the steg-MQ domain socket.
@@ -42,6 +43,7 @@ void publish_stegotext(char* message, char* key){
 	int conn;
 
 	conn = getConnection();
+	write(conn, CMD_PUBLISH_STXT_str, 1);
 
 	close(conn);
 }

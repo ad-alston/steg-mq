@@ -1,5 +1,5 @@
 steg-mq: mq/mq.c mq/stream_interface.c mq/stream_interface.h
-	gcc -o steg-mq mq/mq.c mq/stream_interface.c
+	gcc -o steg-mq mq/mq.c mq/stream_interface.c mq/queue.c
 libstegmq.so: lib-steg-mq/lib-steg-mq.c lib-steg-mq/lib-steg-mq.h
 	gcc -c -Wall -fpic lib-steg-mq/lib-steg-mq.c
 	gcc -shared -o libstegmq.so lib-steg-mq.o

@@ -32,4 +32,9 @@ int interface_start(void);
  */
 int interface_close(int descriptor);
 
+/**
+ * Reads n bytes from a socket stream into buffer.
+ */
+int readBytes(int socket, int n, void* buffer);
+
 #endif
