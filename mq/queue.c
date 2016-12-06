@@ -60,7 +60,9 @@ struct message* new_message(char* data, int len){
 	m->prev = (struct message*) 0;
 	
 	m->data = malloc(len);
-	strncpy(m->data, data, len);
+	m->len = len;
+
+	memcpy(m->data, data, len);
 
 	return m;
 }

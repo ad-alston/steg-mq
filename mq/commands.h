@@ -12,5 +12,6 @@
 
 
 #define CMD_CONSUME_STXT 0x02
+#define CMD_CONSUME_STXT_str "\x02"
 
 #endif

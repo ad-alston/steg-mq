@@ -12,6 +12,7 @@ struct message {
 	struct message* next;
 	struct message* prev;
 	char* data;
+	int len;
 };
 
 struct queue {

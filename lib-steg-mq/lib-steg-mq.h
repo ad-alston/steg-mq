@@ -7,7 +7,7 @@
 
 #define STEG_MQ_SOCK_PATH "/tmp/smq_sock"
 
-extern void publish_stegotext(char* message, char* key);
-extern void consume_stegotext(void);
+extern int publish_stegotext(char* message, char* key);
+extern int consume_stegotext(void* dest, int len);
 
 #endif

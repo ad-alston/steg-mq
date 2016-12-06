@@ -53,14 +53,16 @@ int interface_close(int descriptor){
  * Reads n bytes from a socket stream into buffer.
  */
 int readBytes(int socket, int n, void* buffer){
-	int read = 0;
+	int num_read = 0;
 	int result;
 
-	while(read < n){
-		if( (result = read(socket, buffer + read, n - read) < 1)){
+	while(num_read < n){
+		fprintf(stderr, "%ld\n", (long) (buffer + num_read));
+		if( (result = read(socket, buffer + num_read, n - num_read) < 1) ){
 			return -1;
 		}
-		read += result;
+		num_read += result;
+		fprintf(stderr, "nread %d\n", num_read);
 	}
 	return 0;
 }
